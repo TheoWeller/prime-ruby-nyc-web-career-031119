@@ -1,12 +1,7 @@
-def prime?(integer)
-  (2..integer - 1).each do |x|
-    return false if (integer % x)==0
-  end
-if integer % 1 == 0 && integer % integer == 0
+def prime?(number)
+  return false if !number.integer?
+  return false if number < 2
+  return true if number == 2 
+  (2..number-1).each {|int| return false if number % int == 0}
   true
-elsif integer < 2
-  false
-else
-  false
-  end
-end
+end 
